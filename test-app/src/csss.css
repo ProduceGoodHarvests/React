@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    padding: 5px;
+    display: flex;
+}
+span{
+    flex: 1;
+}
+li:nth-child(odd){
+    background: red;
+}

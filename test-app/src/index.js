@@ -1,20 +1,45 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './app/App';
-import * as serviceWorker from './serviceWorker';
+import feiyan from './list.json'
+import './csss.css'
+// import './spider.js'
+let objNew = []
+for (let i in feiyan.data.provinceCompare) {
+    feiyan.data.provinceCompare[i].name = i
+    objNew.push(feiyan.data.provinceCompare[i])
+}
+console.log(objNew)
+class Welcome extends React.Component {
+    constructor(props) {
+        super(props)
+    }
+    render() {
+        return (
+            <div>
+                <h1>国内疫情</h1>
+                <ul>
+                    <li>
+                        <span>省份</span>
+                        <span>新增</span>
+                        <span>死亡</span>
+                        <span> 治愈</span>
+                        <span>累计清零天数</span>
+                    </li>
+                    {this.props.list.map((item, i) => {
+                        return (
+                            <li >
+                                <span>{item.name}</span>
+                                <span>{item.nowConfirm}</span>
+                                <span>{item.dead}</span>
+                                <span>{item.heal}</span>
+                                <span>{item.nowConfirm}</span>
+                            </li>
+                        )
+                    })}
 
-
-setInterval(() => {
-  ReactDOM.render(
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>,
-    document.getElementById('root')
-  );
-}, 1000)
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+                </ul>
+            </div>
+        )
+    }
+}
+ReactDOM.render(<Welcome list={objNew} />, document.querySelector("#root"))
