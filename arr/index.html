@@ -10,5 +10,81 @@
 <body>
 
 </body>
+<script>
+    // 数组的
+    // let arr = ['10', '21', '13', '44', '65', '26', '5'];
+    let arr = [10, 21, 13, 44, 65, 26, 5];
+    // 看这是刚刚写一个方法看的到不你在后边写
+    //  ？？？宝贝？你看不到嘛？
+    // 看这里 在这里聊天ok
+    // 这个双斜杠 是注释 
+    // 看见扣个1111111111 
+    // 哈哈哈哈刺激 为啥是彩色的
+    // 因为我装了一个插件 叫bracket-pair-colorizer
+    // oo
+    // 哈哈哈哈 感觉这样学的快 能直接编辑
+    // 嗯呐
+    // 那我现在教你学 咋样 不咋样  我学不会 
+    // 咋会呢 我看着你 那行吧
+    // 刚刚这个回退的 是方法 叫function
+    // 那我开始了啊
+    function fnPx(arr) {
+        for (let j = 0; j < arr.length; j++) {
+            for (let i = 0; i < arr.length - j; i++) {
+                if (arr[i] > arr[i + 1]) {
+                    let a = arr[i]
+                    arr[i] = arr[i + 1]
+                    arr[i + 1] = a
+                }
+            }
+        }
+        return arr
+    }
+    fnPx(arr)
+    console.log(arr)
+
+    // 对数组进行直接的循环
+    // arr.forEach((item, index, arr) => {
+    //     console.log(item)
+    //     console.log(index)
+    //     console.log(arr)
+    // })
+    // 数组的
+    // let res = arr.map((item, index) => {
+    //     // console.log(item)
+    //     let str = index + 1 + '-' + item
+    //     return str
+    // })
+    // let arr3 = arr.filter((item) => {
+    //     if (item % 2 != 0) {
+    //         return true
+    //     } else {
+    //         return false
+    //     }
+
+    // })
+    // let arr3 = arr.reduce((a, b, c) => {
+    //     return a + b
+    // })
+    // console.log(arr3)
+    // let obj = {
+    //     name: '超哥',
+    //     type: '男',
+    //     height: "178cm",
+    //     tiz: '60Kg',
+    //     dizhi: '北京市朝阳区'
+    // }
+    // for (const key in obj) {
+
+    //     console.log(key)
+    //     console.log(obj[key])
+    //     // if (obj.hasOwnProperty(key)) {
+    //     //     const element = obj[key];
+    //     // }
+    // }
+    // for (const iterator of arr) {
+    //     console.log(iterator)
+    // }
+</script>
 
 </html>
